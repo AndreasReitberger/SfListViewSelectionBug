@@ -9,7 +9,9 @@
    
     x:DataType="viewModels:MainPageViewModel"
     >
-    <Grid>
+    <Grid
+        RowDefinitions="*,Auto"
+        >
         <syncfusion:SfListView
             ItemsSource="{Binding Items}"
             SelectionMode="Multiple"
@@ -31,5 +33,12 @@
                 </DataTemplate>
             </syncfusion:SfListView.ItemTemplate>
         </syncfusion:SfListView>
+
+        <Button
+            Margin="5"
+            Grid.Row="1"
+            Text="Display selection count"
+            Command="{Binding ShowSelectionCountCommand}"
+            />
     </Grid>
 </ContentPage>

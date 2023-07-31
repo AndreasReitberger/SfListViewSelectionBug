@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -41,6 +42,14 @@ namespace MauiApp_SfListViewBug.ViewModels
                 new Item() { Id = 2, Name = "Second item"},
                 new Item() { Id = 3, Name = "Third item"}
             };
+        }
+        #endregion
+
+        #region Commands
+        [RelayCommand]
+        async Task ShowSelectionCount()
+        {
+            await Shell.Current.DisplayAlert("Selection count", $"Currently are {Selection?.Count} items selected!", "OK");
         }
         #endregion
     }
